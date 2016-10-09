@@ -1,0 +1,24 @@
+﻿@model TicketSystem.Models.Ticket
+<div class="form-group">
+    @Html.LabelFor(m => m.Title)
+    @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Description)
+    @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = 4 })
+</div>
+<div class="form-group">
+    @if (User.IsInRole("Customer"))
+    {
+        @Html.LabelFor(m => m.CustomerResponse)
+        @Html.TextAreaFor(m => m.CustomerResponse, new { @class = "form-control", rows = 4 })
+    }
+    @if (User.IsInRole("Employee"))
+    {
+        @Html.LabelFor(m => m.EmployeeResponse)
+        @Html.TextAreaFor(m => m.EmployeeResponse, new { @class = "form-control", rows = 4 })
+    }
+</div>
+@Html.HiddenFor(m => m.ID)
+<input type="submit" class="btn btn-primary" value="Save" />
+

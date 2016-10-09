@@ -1,0 +1,23 @@
+﻿@model TicketSystem.Models.Ticket
+@{
+    ViewBag.Title = "CloseTicket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CloseTicket</h2>
+
+<p>
+    Are you sure you want to close this ticket?
+</p>
+<ul>
+    <li>Title: @Model.Title</li>
+    <li>Description: @Model.Description</li>
+    <li>Status : @Model.Status</li>
+</ul>
+
+@using (Html.BeginForm("CloseTicket", "Ticket", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.ID)
+    <input type="submit" class=" btn btn-danger" value="Yes, Close it!" />
+    @Html.ActionLink("No, back to tickets", "Index")
+}

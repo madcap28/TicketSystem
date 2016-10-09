@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TicketSystem.Models.Ticket>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tickets</h2>
+
+<p>
+    @using (Html.BeginForm("Search", "Ticket", FormMethod.Get))
+    {
+    <p>
+        Description: @Html.TextBox("id") <br />
+        <input type="submit" value="Filter" />
+    </p>
+    }
+    @if (User.IsInRole("Customer"))
+    {
+        @Html.ActionLink("Add Ticket", "New")
+    }
+    </p>
+
+    <ul>
+        @foreach (var ticket in Model)
+        {
+            <li>
+                @Html.ActionLink(ticket.Title, "TicketDetails", new { id = ticket.ID }) (@ticket.Date) (Status: @ticket.Status)
+                @if (!User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = ticket.ID })
+                }
+                @if (User.IsInRole("Customer"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = ticket.ID })
+                }
+                @if (User.IsInRole("Customer"))
+                {
+                    @Html.ActionLink("Schedule", "Schedule", new { id = ticket.ID })
+                }
+                @if (User.IsInRole("Employee"))
+                {
+                    @Html.ActionLink("Close", "CloseTicket", new { id = ticket.ID })
+                }
+            </li>
+        }
+    </ul>
