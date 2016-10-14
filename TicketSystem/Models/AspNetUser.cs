@@ -1,4 +1,4 @@
-namespace TicketSystem
+namespace TicketSystem.Models
 {
     using System;
     using System.Collections.Generic;

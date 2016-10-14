@@ -82,3 +82,4 @@ c:\users\madcap28\documents\visual studio 2015\Projects\TicketSystem\TicketSyste
 c:\users\madcap28\documents\visual studio 2015\Projects\TicketSystem\TicketSystem\obj\Debug\TicketSystem.pdb
 C:\Users\madcap28\documents\visual studio 2015\Projects\TicketSystem\TicketSystem\obj\Debug\TicketSystem.Migrations.AddTicketsTable.resources
 C:\Users\madcap28\documents\visual studio 2015\Projects\TicketSystem\TicketSystem\obj\Debug\TicketSystem.csproj.GenerateResource.Cache
+C:\Users\madcap28\documents\visual studio 2015\Projects\TicketSystem\TicketSystem\obj\Debug\TicketSystem.Migrations.Initial.resources

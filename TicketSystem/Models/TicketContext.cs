@@ -1,14 +1,14 @@
-namespace TicketSystem
+namespace TicketSystem.Models
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class TicketContext1 : DbContext
+    public partial class TicketContext : DbContext
     {
-        public TicketContext1()
-            : base("name=TicketContext1")
+        public TicketContext()
+            : base("name=TicketContext")
         {
         }
 
