@@ -18,7 +18,7 @@ namespace TicketSystem
 
         private void createUsersAndRoles()
         {
-            ApplicationDbContext context = new ApplicationDbContext();
+            TicketContext context = new TicketContext();
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
