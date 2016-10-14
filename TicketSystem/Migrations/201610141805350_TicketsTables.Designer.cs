@@ -13,7 +13,7 @@ namespace TicketSystem.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201610141646440_TicketsTables"; }
+            get { return "201610141805350_TicketsTables"; }
         }
         
         string IMigrationMetadata.Source

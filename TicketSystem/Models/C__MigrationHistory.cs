@@ -7,7 +7,7 @@ namespace TicketSystem.Models
     using System.Data.Entity.Spatial;
 
     [Table("__MigrationHistory")]
-    public partial class __MigrationHistory
+    public partial class C__MigrationHistory
     {
         [Key]
         [Column(Order = 0)]

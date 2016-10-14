@@ -19,10 +19,10 @@ namespace TicketSystem.Models
             return userIdentity;
         }
     }
-    public partial class TicketContext : IdentityDbContext<ApplicationUser>
+    public partial class TicketContext : DbContext
     {
         public TicketContext()
-            : base("AppHarborConnection", throwIfV1Schema:false)
+            : base("AppHarborConnection")
         {
         }
         public static TicketContext Create()
@@ -30,7 +30,7 @@ namespace TicketSystem.Models
             return new TicketContext();
         }
 
-        public virtual DbSet<__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
@@ -53,9 +53,6 @@ namespace TicketSystem.Models
                 .HasMany(e => e.AspNetUserLogins)
                 .WithRequired(e => e.AspNetUser)
                 .HasForeignKey(e => e.UserId);
-            modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id).Property(p => p.Name).IsRequired();
-            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
-            modelBuilder.Entity<IdentityUserLogin>().HasKey(u => new { u.UserId, u.LoginProvider, u.ProviderKey });
         }
     }
 }

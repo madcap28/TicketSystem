@@ -9,7 +9,7 @@ namespace TicketSystem.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(TicketSystem.Models.TicketContext context)
