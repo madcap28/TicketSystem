@@ -4,14 +4,30 @@ namespace TicketSystem.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-
-    public partial class TicketContext : DbContext
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+    using Microsoft.AspNet.Identity;
+    public class ApplicationUser : IdentityUser
+    {
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            // Add custom user claims here
+            return userIdentity;
+        }
+    }
+    public partial class TicketContext : IdentityDbContext<ApplicationUser>
     {
         public TicketContext()
-            : base("AppHarborConnection")
+            : base("AppHarborConnection", throwIfV1Schema : false)
         {
         }
-
+        public static TicketContext Create()
+        {
+            return new TicketContext();
+        }
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
