@@ -205,18 +205,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610041932056_AddTicketsTable.cs" />
-    <Compile Include="Migrations\201610041932056_AddTicketsTable.Designer.cs">
-      <DependentUpon>201610041932056_AddTicketsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610141334536_Initial.cs" />
-    <Compile Include="Migrations\201610141334536_Initial.Designer.cs">
-      <DependentUpon>201610141334536_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610141606238_NewMigration.cs" />
-    <Compile Include="Migrations\201610141606238_NewMigration.Designer.cs">
-      <DependentUpon>201610141606238_NewMigration.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs" />
@@ -309,17 +297,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610041932056_AddTicketsTable.resx">
-      <DependentUpon>201610041932056_AddTicketsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610141334536_Initial.resx">
-      <DependentUpon>201610141334536_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610141606238_NewMigration.resx">
-      <DependentUpon>201610141606238_NewMigration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
