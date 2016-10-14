@@ -18,11 +18,11 @@ namespace TicketSystem.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        TicketContext context;
+        ApplicationDbContext context;
 
         public AccountController()
         {
-            context = new TicketContext();
+            context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -142,7 +142,7 @@ namespace TicketSystem.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Name = new SelectList(context.AspNetRoles.ToList(), "Name", "Name", "Name");
+            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name", "Name");
             return View();
         }
 
@@ -169,7 +169,7 @@ namespace TicketSystem.Controllers
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     return RedirectToAction("Index", "Home");
                 }
-                ViewBag.Name = new SelectList(context.AspNetRoles.ToList(), "Name", "Name", "Name");
+                ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name", "Name");
                 
                 AddErrors(result);
             }

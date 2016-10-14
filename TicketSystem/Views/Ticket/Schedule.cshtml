@@ -1,0 +1,24 @@
+﻿@model TicketSystem.Models.Ticket
+@{
+    ViewBag.Title = "Schedule";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Schedule</h2>
+
+@using (Html.BeginForm("SetSchedule", "Ticket", FormMethod.Post, new { @class = "form" }))
+{
+    <div>
+        @Html.LabelFor(m => m.ScheduledDay)
+
+        Please enter in DD/MM/YYYY format: @Html.TextBoxFor(m => m.ScheduledDay, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.ScheduledTime)
+
+        Please enter in HH:MM format: @Html.TextBoxFor(m => m.ScheduledTime, new { @class = "form-control"})
+    </div>
+    @Html.HiddenFor(m => m.ID)
+    <input type="submit" class="btn btn-primary" value="Save" />
+}

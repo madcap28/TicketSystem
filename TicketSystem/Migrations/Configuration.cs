@@ -5,14 +5,14 @@ namespace TicketSystem.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TicketSystem.Models.TicketContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<TicketSystem.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(TicketSystem.Models.TicketContext context)
+        protected override void Seed(TicketSystem.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
