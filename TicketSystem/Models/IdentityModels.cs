@@ -18,17 +18,17 @@ namespace TicketSystem.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class TicketContext1 : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Ticket> Tickets { get; set; }
-        public ApplicationDbContext()
+        public TicketContext1()
             : base("AppHarborConnection", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static TicketContext1 Create()
         {
-            return new ApplicationDbContext();
+            return new TicketContext1();
         }
     }
 }

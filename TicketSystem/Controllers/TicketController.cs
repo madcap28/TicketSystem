@@ -10,10 +10,10 @@ namespace TicketSystem.Controllers
     public class TicketController : Controller
     {
         private DateTime _returnDate = DateTime.Now;
-        private ApplicationDbContext _dbContext;
+        private TicketContext1 _dbContext;
         public TicketController()
         {
-            _dbContext = new ApplicationDbContext();
+            _dbContext = new TicketContext1();
         }
         // GET: Ticket
         public ActionResult Index()
