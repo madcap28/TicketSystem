@@ -22,7 +22,7 @@ namespace TicketSystem.Models
     public partial class TicketContext : IdentityDbContext<ApplicationUser>
     {
         public TicketContext()
-            : base("BenConnection", throwIfV1Schema:false)
+            : base("AppHarborConnection", throwIfV1Schema:false)
         {
         }
         public static TicketContext Create()
@@ -39,7 +39,6 @@ namespace TicketSystem.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<AspNetRole>()
                 .HasMany(e => e.AspNetUsers)
                 .WithMany(e => e.AspNetRoles)
