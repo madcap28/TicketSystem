@@ -8,7 +8,7 @@ namespace TicketSystem.Models
     public partial class TicketContext : DbContext
     {
         public TicketContext()
-            : base("name=TicketContext")
+            : base("AppHarborConnection")
         {
         }
 
