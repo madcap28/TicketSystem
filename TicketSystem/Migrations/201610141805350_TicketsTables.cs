@@ -61,17 +61,6 @@ namespace TicketSystem.Migrations
                 .Index(t => t.UserId);
             
             CreateTable(
-                "dbo.__MigrationHistory",
-                c => new
-                    {
-                        MigrationId = c.String(nullable: false, maxLength: 150),
-                        ContextKey = c.String(nullable: false, maxLength: 300),
-                        Model = c.Binary(nullable: false),
-                        ProductVersion = c.String(nullable: false, maxLength: 32),
-                    })
-                .PrimaryKey(t => new { t.MigrationId, t.ContextKey });
-            
-            CreateTable(
                 "dbo.Tickets",
                 c => new
                     {
