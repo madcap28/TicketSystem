@@ -75,8 +75,9 @@ namespace TicketSystem.Controllers
                     }
                     return View(myTickets);
                 }
-                return View();
-            
+            return Redirect("http://ticketingsystem-4.apphb.com/Account/Register");
+
+
         }
         public ActionResult New()
         {
