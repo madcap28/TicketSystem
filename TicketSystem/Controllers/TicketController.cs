@@ -44,7 +44,7 @@ namespace TicketSystem.Controllers
                 }
                 return View(myTickets);
             }
-            return View();
+            return Redirect("http://ticketingsystem-4.apphb.com/Account/Register");
         }
         public ActionResult Search(string id)
         {
@@ -75,9 +75,8 @@ namespace TicketSystem.Controllers
                     }
                     return View(myTickets);
                 }
-            return Redirect("http://ticketingsystem-4.apphb.com/Account/Register");
-
-
+                return View();
+            
         }
         public ActionResult New()
         {
